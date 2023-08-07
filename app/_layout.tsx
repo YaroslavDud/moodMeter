@@ -6,7 +6,7 @@ import { useColorScheme } from "react-native";
 import Home from "@/app/home";
 import SignUp from "@/app/sign-up";
 
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+//import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -26,12 +26,12 @@ export default function RootLayout() {
   const [user, setUser] = useState(null);
 
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    ...FontAwesome.font,
+    //SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    //...FontAwesome.font,
   });
 
   useEffect(() => {
-    if (loaded) {
+    if (!loaded) {
       SplashScreen.hideAsync();
       // Get user stored info
       (async () => {
